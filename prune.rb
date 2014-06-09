@@ -1,0 +1,2 @@
+class GitJanitor::Prune
+end
