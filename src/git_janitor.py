@@ -17,7 +17,7 @@ class GitJanitor:
     # `sh -c "git branch origin --delete #{branches_to_be_deleted}"`
 
   def preview(self):
-    print self.worker.branches_to_be_deleted()
+    return self.worker.branches_to_be_deleted()
 
   def do_ya_thang(self):
     if(self.want_to_preview() or not self.want_to_clean()):

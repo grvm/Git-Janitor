@@ -14,13 +14,15 @@ class Worker:
     self.remove_current_branch(branches)
     if len(branches) > 0:
       print Color.BOLD + Color.WARNING_COLOR + "Following local branches would be deleted:" + Color.ENDC
-      return "\n".join(branches)
+      return branches
     else:
       print Color.BOLD + Color.FAIL_COLOR + "No branches to be deleted" + Color.ENDC
+      return []
 
   def delete_branches(self):
-    os.popen("git branch -D " + " ".join(self.branches_to_be_deleted()))
-    print Color.BOLD + Color.OK_COLOR + "Cleaned Successfully!!" + Color.ENDC
+    if len(self.branches_to_be_deleted()) > 0:
+      os.popen("git branch -D " + " ".join(self.branches_to_be_deleted()))
+      print Color.BOLD + Color.OK_COLOR + "Cleaned Successfully!!" + Color.ENDC
 
   def remove_current_branch(self, branches):
     if(self.git.current_branch() in branches):
