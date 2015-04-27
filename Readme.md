@@ -21,7 +21,7 @@ git-janitor --preview
 git-janitor --clean
 ```
 
-##### Skipping files which match a pattern
+##### Skipping branches which match a pattern
 ```
 git-janitor --skip-pattern='*pattern*'
 ```
