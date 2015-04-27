@@ -8,7 +8,11 @@ P.S. It only removes branches which have been merged into your current branch.
 
 ## Usage
 
+#### Add the bilary in the `dist` folder to your path, or some folder in your path to use it from any location on your system.
+
 ##### Basic Usage
+Go to the location of the repo on your system which you want to clean.
+
 ```
 git-janitor --preview | --clean --skip-pattern='pattern'
 ```
