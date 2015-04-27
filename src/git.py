@@ -32,9 +32,6 @@ class Git:
     else:
       return []
 
-  def delete_branches(self):
-    os.popen("git branch -D " + " ".join(self.branches_to_be_deleted()))
-
   def sanitize_branch_list(self, branches):
     return [x.replace("*", "").strip() for x in branches]
 

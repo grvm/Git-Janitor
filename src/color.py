@@ -6,3 +6,6 @@ class Color:
   ENDC = '\033[0m'
   BOLD = '\033[1m'
   UNDERLINE = '\033[4m'
+
+  def bold_and_fail(self):
+    self.FAIL_COLOR + self.BOLD
