@@ -39,3 +39,9 @@ git-janitor --skip-pattern='*pattern*'
 * `'*pattern*'` would search for occurence of the string 'pattern' anywhere in a branch.
 * `'pattern*'` would search for occurence of the string 'pattern' in the starting a branch.
 * `'*pattern'` would search for occurence of the string 'pattern' in the end of a branch.
+
+### Contributions
+
+Contribution and feedback are greatly appreciated.
+
+_`Copyright (c) 2015 Gaurav Manchanda Under MIT License`_
