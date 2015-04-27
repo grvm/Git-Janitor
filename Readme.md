@@ -28,6 +28,6 @@ git-janitor --skip-pattern='*pattern*'
 
 `*` is a wildcard character.
 
-* '*pattern*' would search for occurence of the string 'pattern' anywhere in a branch.
+* '\*pattern\*' would search for occurence of the string 'pattern' anywhere in a branch.
 * 'pattern*' would search for occurence of the string 'pattern' in the starting a branch.
 * '*pattern' would search for occurence of the string 'pattern' in the end of a branch.
