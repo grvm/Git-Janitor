@@ -13,7 +13,7 @@ class GitJanitor:
     return "--clean" in self.args
 
   def clean(self):
-    return self.worker.delete_branches()
+    self.worker.delete_branches()
     # `sh -c "git branch origin --delete #{branches_to_be_deleted}"`
 
   def preview(self):

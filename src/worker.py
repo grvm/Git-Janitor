@@ -22,7 +22,14 @@ class Worker:
   def delete_branches(self):
     if len(self.branches_to_be_deleted()) > 0:
       os.popen("git branch -D " + " ".join(self.branches_to_be_deleted()))
+      self.delete_remote_branches()
       print Color.BOLD + Color.OK_COLOR + "Cleaned Successfully!!" + Color.ENDC
+
+  def delete_remote_branches(self):
+    try:
+      os.popen("git push origin --delete " + " ".join(self.branches_to_be_deleted()))
+    except:
+      print "There was an error deleting remote branches: ", sys.exc_info()[0]
 
   def remove_current_branch(self, branches):
     if(self.git.current_branch() in branches):
