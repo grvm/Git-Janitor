@@ -19,10 +19,11 @@ class Worker:
       print Color.BOLD + Color.FAIL_COLOR + "No branches to be deleted" + Color.ENDC
       return []
 
-  def delete_branches(self):
+  def delete_branches(self, remote=False):
     if len(self.branches_to_be_deleted()) > 0:
       os.popen("git branch -D " + " ".join(self.branches_to_be_deleted()))
-      self.delete_remote_branches()
+      if remote:
+        self.delete_remote_branches()
       print Color.BOLD + Color.OK_COLOR + "Cleaned Successfully!!" + Color.ENDC
 
   def delete_remote_branches(self):

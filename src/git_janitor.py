@@ -12,15 +12,18 @@ class GitJanitor:
   def want_to_clean(self):
     return "--clean" in self.args
 
+  def want_to_delete_remote(self):
+    return "--remote" in self.args
+
   def clean(self):
-    self.worker.delete_branches()
+    self.worker.delete_branches(remote=True)
     # `sh -c "git branch origin --delete #{branches_to_be_deleted}"`
 
   def preview(self):
     return self.worker.branches_to_be_deleted()
 
   def do_ya_thang(self):
-    if(self.want_to_preview() or not self.want_to_clean()):
-      self.preview()
     if self.want_to_clean():
       self.clean()
+    else:
+      print " ".join(self.preview())

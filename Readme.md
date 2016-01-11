@@ -27,6 +27,11 @@ git-janitor --preview
 git-janitor --clean
 ```
 
+##### Delete Remote branches
+```
+git-janitor --clean --remote
+```
+
 ##### Skipping branches which match a pattern
 ```
 git-janitor --skip-pattern='*pattern*'
