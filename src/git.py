@@ -1,6 +1,6 @@
 import os, re
 
-from color import Color
+from formatter import Formatter
 
 class Git:
 
@@ -11,10 +11,7 @@ class Git:
     pattern = re.compile("--skip-pattern=(.+)")
     strng = " ".join(self.args)
     mtch = pattern.search(strng)
-    if mtch != None:
-      return mtch.group(1)
-    else:
-      return ""
+    return mtch.group(1) if mtch else ""
 
   def current_branch(self):
     return os.popen("git rev-parse --abbrev-ref HEAD").read().strip()
@@ -26,8 +23,7 @@ class Git:
     if self.skip_pattern_exists():
       cmd = "git branch --list '"+ str(self.skip_pattern()) + "' --merged"
       branches = self.sanitize_branch_list(os.popen(cmd).readlines())
-      if len(branches) == 0:
-        print Color.BOLD + Color.FAIL_COLOR + "No branch name matches the given skip pattern: " + " " + Color.UNDERLINE + str(self.skip_pattern()) + Color.ENDC
+      self.warn_if_no_branch_matches_pattern(branches)
       return branches
     else:
       return []
@@ -37,3 +33,7 @@ class Git:
 
   def skip_pattern_exists(self):
     return str(self.skip_pattern()) != ""
+
+  def warn_if_no_branch_matches_pattern(self, branches):
+    if len(branches) == 0:
+      Formatter.print_pretty_bold_message(Formatter.FAIL_COLOR, "No branch name matches the given skip pattern: " + " " + Formatter.UNDERLINE + str(self.skip_pattern()))
