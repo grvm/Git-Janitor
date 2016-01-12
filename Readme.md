@@ -14,12 +14,12 @@ P.S. It only removes branches which have been merged into your current branch. D
 Go to the location of the repo on your system which you want to clean.
 
 ```
-git-janitor --preview | --clean --skip-pattern='pattern'
+git-janitor --clean --remote --skip-pattern='pattern'
 ```
 
 ##### Preview branches that would be deleted:
 ```
-git-janitor --preview
+git-janitor
 ```
 
 ##### Delete branches
