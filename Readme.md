@@ -1,8 +1,8 @@
 # Git Janitor
 
-There are times when you create temp branches, push your code on it, then merge it in the main working branch, and forget about it!!
+There are times when you create temp branches, push your code on them, merge them in the main working branch, and forget about them!!
 
-Git Janitor helps you delete these branches from local, as well as the remote repo.
+Git Janitor frees you from the hassle of cleaning these branches manually and deletes these branches from local, as well as the remote repo.
 
 P.S. It only removes branches which have been merged into your current branch. Does not work on **Windows**
 
