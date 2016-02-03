@@ -4,11 +4,15 @@ There are times when you create temp branches, push your code on them, merge the
 
 Git Janitor frees you from the hassle of cleaning these branches manually and deletes these branches from local, as well as the remote repo.
 
-P.S. It only removes branches which have been merged into your current branch. Does not work on **Windows**
+P.S. It only removes branches which have been merged into your current branch.
+
+**P.P.S Works now on Windows as well.**
 
 ## Usage
 
 #### Add the binary in the `dist` folder to your path, or some folder in your path to use it from any location on your system.
+
+Use `dist/git-janitor.exe` if you are on **Windows**, `dist/git-janitor` **for Linux/Unix/OS X**
 
 ##### Basic Usage
 Go to the location of the repo on your system which you want to clean.
