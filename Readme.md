@@ -15,7 +15,7 @@ P.S. It only removes branches which have been merged into your current branch.
 Use `dist/git-janitor.exe` if you are on **Windows**, `dist/git-janitor` **for Linux/Unix/OS X**
 
 ##### Basic Usage
-Go to the location of the repo on your system which you want to clean.
+Go to the location of the repository on your system which you want to clean.
 
 ```
 git-janitor --clean --remote --skip-pattern='pattern'
@@ -41,11 +41,11 @@ git-janitor --clean --remote
 git-janitor --skip-pattern='*pattern*'
 ```
 
-`*` is a wildcard character.
+`*` is a wild card character.
 
-* `'*pattern*'` would search for occurence of the string 'pattern' anywhere in a branch.
-* `'pattern*'` would search for occurence of the string 'pattern' in the starting a branch.
-* `'*pattern'` would search for occurence of the string 'pattern' in the end of a branch.
+* `'*pattern*'` would search for occurrence of the string 'pattern' anywhere in a branch.
+* `'pattern*'` would search for occurrence of the string 'pattern' in the starting a branch.
+* `'*pattern'` would search for occurrence of the string 'pattern' in the end of a branch.
 
 ##### If no option is specified, it works in preview mode!!
 

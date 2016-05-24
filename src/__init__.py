@@ -1,0 +1,1 @@
+"""The Gitjanitor module."""
